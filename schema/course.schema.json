@@ -1,357 +1,357 @@
 {
-  "$anchor": "boxMenu-course",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "$patch": {
-    "source": {
-      "$ref": "course"
-    },
-    "with": {
-      "properties": {
-        "_globals": {
-          "type": "object",
-          "default": {},
-          "properties": {
-            "_menu": {
-              "type": "object",
-              "default": {},
-              "properties": {
-                "_boxMenu": {
-                  "type": "object",
-                  "title": "Box Menu",
-                  "default": {},
-                  "properties": {
-                    "itemCount": {
-                      "type": "string",
-                      "title": "Item count label",
-                      "default": "Item {{_nthChild}} of {{_totalChild}}",
-                      "_adapt": {
-                        "translatable": true
-                      }
-                    },
-                    "durationLabel": {
-                      "type": "string",
-                      "title": "Duration label",
-                      "default": "Duration:",
-                      "_adapt": {
-                        "translatable": true
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+    "$anchor": "boxMenu-course",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "$patch": {
+        "source": {
+            "$ref": "course"
         },
-        "_boxMenu": {
-          "type": "object",
-          "title": "Box Menu",
-          "default": {},
-          "properties": {
-            "_graphic": {
-              "type": "object",
-              "title": "Menu logo image",
-              "default": {},
-              "properties": {
-                "_src": {
-                  "type": "string",
-                  "title": "Source",
-                  "description": "This image will appear above the menu page title",
-                  "_backboneForms": {
-                    "type": "Asset",
-                    "media": "image"
-                  }
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Alternative text",
-                  "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
-                  "default": "",
-                  "_adapt": {
-                    "translatable": true
-                  }
-                }
-              }
-            },
-            "_backgroundImage": {
-              "type": "object",
-              "title": "Background image",
-              "default": {},
-              "properties": {
-                "_xlarge": {
-                  "type": "string",
-                  "title": "Extra large",
-                  "description": "Extra large background image, e.g. hd laptop/desktop computers",
-                  "_backboneForms": {
-                    "type": "Asset",
-                    "media": "image"
-                  }
-                },
-                "_large": {
-                  "type": "string",
-                  "title": "Large",
-                  "description": "Large background image, e.g. laptop/desktop computers",
-                  "_backboneForms": {
-                    "type": "Asset",
-                    "media": "image"
-                  }
-                },
-                "_medium": {
-                  "type": "string",
-                  "title": "Medium",
-                  "description": "Medium background image, e.g. tablet devices",
-                  "_backboneForms": {
-                    "type": "Asset",
-                    "media": "image"
-                  }
-                },
-                "_small": {
-                  "type": "string",
-                  "title": "Small",
-                  "description": "Small background image, e.g. mobile / cellphones",
-                  "_backboneForms": {
-                    "type": "Asset",
-                    "media": "image"
-                  }
-                }
-              }
-            },
-            "_backgroundStyles": {
-              "type": "object",
-              "title": "Background image styles",
-              "default": {},
-              "properties": {
-                "_backgroundRepeat": {
-                  "type": "string",
-                  "title": "Repeat",
-                  "description": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically",
-                  "default": "",
-                  "enum": [
-                    "",
-                    "repeat",
-                    "repeat-x",
-                    "repeat-y",
-                    "no-repeat"
-                  ],
-                  "_backboneForms": "Select"
-                },
-                "_backgroundSize": {
-                  "type": "string",
-                  "title": "Size",
-                  "description": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible",
-                  "default": "",
-                  "enum": [
-                    "",
-                    "auto",
-                    "cover",
-                    "contain"
-                  ],
-                  "_backboneForms": "Select"
-                },
-                "_backgroundPosition": {
-                  "type": "string",
-                  "title": "Position",
-                  "description": "The first value is the horizontal position and the second value is the vertical",
-                  "default": "",
-                  "enum": [
-                    "",
-                    "left top",
-                    "left center",
-                    "left bottom",
-                    "center top",
-                    "center center",
-                    "center bottom",
-                    "right top",
-                    "right center",
-                    "right bottom"
-                  ],
-                  "_backboneForms": "Select"
-                }
-              }
-            },
-            "_menuHeader": {
-              "type": "object",
-              "title": "Header",
-              "default": {},
-              "properties": {
-                "_textAlignment": {
-                  "type": "object",
-                  "title": "Text alignment",
-                  "default": {},
-                  "properties": {
-                    "_title": {
-                      "type": "string",
-                      "title": "Title alignment",
-                      "description": "Set the alignment of the menu title. Left: Aligns the title to the left of the container. Center: Aligns the title to the center of the container. Right: Aligns the title to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "left",
-                        "center",
-                        "right"
-                      ],
-                      "_backboneForms": "Select"
-                    },
-                    "_body": {
-                      "type": "string",
-                      "title": "Body alignment",
-                      "description": "Set the alignment of the menu body. Left: Aligns the body to the left of the container. Center: Aligns the body to the center of the container. Right: Aligns the body to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "left",
-                        "center",
-                        "right"
-                      ],
-                      "_backboneForms": "Select"
-                    },
-                    "_instruction": {
-                      "type": "string",
-                      "title": "Instruction alignment",
-                      "description": "Set the alignment of the menu instruction. Left: Aligns the instruction to the left of the container. Center: Aligns the instruction to the center of the container. Right: Aligns the instruction to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "left",
-                        "center",
-                        "right"
-                      ],
-                      "_backboneForms": "Select"
+        "with": {
+            "properties": {
+                "_globals": {
+                    "type": "object",
+                    "default": {},
+                    "properties": {
+                        "_menu": {
+                            "type": "object",
+                            "default": {},
+                            "properties": {
+                                "_boxMenu": {
+                                    "type": "object",
+                                    "title": "Meniu casetă",
+                                    "default": {},
+                                    "properties": {
+                                        "itemCount": {
+                                            "type": "string",
+                                            "title": "Etichetă număr de articole",
+                                            "default": "Item {{_nthChild}} of {{_totalChild}}",
+                                            "_adapt": {
+                                                "translatable": true
+                                            }
+                                        },
+                                        "durationLabel": {
+                                            "type": "string",
+                                            "title": "Etichetă de durată",
+                                            "default": "Duration:",
+                                            "_adapt": {
+                                                "translatable": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                  }
                 },
-                "_backgroundImage": {
-                  "type": "object",
-                  "title": "Header background image",
-                  "default": {},
-                  "properties": {
-                    "_xlarge": {
-                      "type": "string",
-                      "title": "Extra large",
-                      "description": "Extra large background image, e.g. hd laptop/desktop computers",
-                      "_backboneForms": {
-                        "type": "Asset",
-                        "media": "image"
-                      }
-                    },
-                    "_large": {
-                      "type": "string",
-                      "title": "Large",
-                      "description": "Large background image, e.g. laptop/desktop computers",
-                      "_backboneForms": {
-                        "type": "Asset",
-                        "media": "image"
-                      }
-                    },
-                    "_medium": {
-                      "type": "string",
-                      "title": "Medium",
-                      "description": "Medium background image, e.g. tablet devices",
-                      "_backboneForms": {
-                        "type": "Asset",
-                        "media": "image"
-                      }
-                    },
-                    "_small": {
-                      "type": "string",
-                      "title": "Small",
-                      "description": "Small background image, e.g. mobile / cellphones",
-                      "_backboneForms": {
-                        "type": "Asset",
-                        "media": "image"
-                      }
+                "_boxMenu": {
+                    "type": "object",
+                    "title": "Meniu casetă",
+                    "default": {},
+                    "properties": {
+                        "_graphic": {
+                            "type": "object",
+                            "title": "Imagine Logo",
+                            "default": {},
+                            "properties": {
+                                "_src": {
+                                    "type": "string",
+                                    "title": "Sursă",
+                                    "description": "Această imagine va apărea deasupra titlului paginii de meniu",
+                                    "_backboneForms": {
+                                        "type": "Asset",
+                                        "media": "image"
+                                    }
+                                },
+                                "alt": {
+                                    "type": "string",
+                                    "title": "Text alternativ",
+                                    "description": "O descriere a imaginii; necesară atunci când are un înțeles care trebuie transmis cursantului. Pentru imaginile „decorative”, lăsați acest spațiu necompletat",
+                                    "default": "",
+                                    "_adapt": {
+                                        "translatable": true
+                                    }
+                                }
+                            }
+                        },
+                        "_backgroundImage": {
+                            "type": "object",
+                            "title": "Imagine fundal ",
+                            "default": {},
+                            "properties": {
+                                "_xlarge": {
+                                    "type": "string",
+                                    "title": "Εxtra Mare",
+                                    "description": "Imagine de fundal foarte mare, de exemplu, laptop/desktop hd",
+                                    "_backboneForms": {
+                                        "type": "Asset",
+                                        "media": "image"
+                                    }
+                                },
+                                "_large": {
+                                    "type": "string",
+                                    "title": "Mare ",
+                                    "description": "Imagine de fundal mare, de exemplu, laptop/desktop",
+                                    "_backboneForms": {
+                                        "type": "Asset",
+                                        "media": "image"
+                                    }
+                                },
+                                "_medium": {
+                                    "type": "string",
+                                    "title": "Medie",
+                                    "description": "Imagine de fundal medie, de exemplu, dispozitive tabletă",
+                                    "_backboneForms": {
+                                        "type": "Asset",
+                                        "media": "image"
+                                    }
+                                },
+                                "_small": {
+                                    "type": "string",
+                                    "title": "Mică ",
+                                    "description": "Imagine de fundal mică, de exemplu, telefoane mobile / mobile",
+                                    "_backboneForms": {
+                                        "type": "Asset",
+                                        "media": "image"
+                                    }
+                                }
+                            }
+                        },
+                        "_backgroundStyles": {
+                            "type": "object",
+                            "title": "Stiluri de imagine de fundal",
+                            "default": {},
+                            "properties": {
+                                "_backgroundRepeat": {
+                                    "type": "string",
+                                    "title": "Repetă",
+                                    "description": "Repetare-x: Imaginea de fundal se repetă numai orizontal. Repetare: imaginea de fundal se repetă numai pe verticală",
+                                    "default": "",
+                                    "enum": [
+                                        "",
+                                        "repeat",
+                                        "repeat-x",
+                                        "repeat-y",
+                                        "no-repeat"
+                                    ],
+                                    "_backboneForms": "Select"
+                                },
+                                "_backgroundSize": {
+                                    "type": "string",
+                                    "title": "Dimensiuni",
+                                    "description": "Auto: Imaginea de fundal este afișată la dimensiunea sa originală. Copertă: Redimensionați imaginea de fundal pentru a acoperi întregul recipient, chiar dacă trebuie să întindă sau să decupeze imaginea. Conține: redimensionați imaginea de fundal pentru a vă asigura că imaginea este complet vizibilă",
+                                    "default": "",
+                                    "enum": [
+                                        "",
+                                        "auto",
+                                        "cover",
+                                        "contain"
+                                    ],
+                                    "_backboneForms": "Select"
+                                },
+                                "_backgroundPosition": {
+                                    "type": "string",
+                                    "title": "Funcţia",
+                                    "description": "Prima valoare este poziția orizontală, iar a doua valoare este poziția verticală",
+                                    "default": "",
+                                    "enum": [
+                                        "",
+                                        "left top",
+                                        "left center",
+                                        "left bottom",
+                                        "center top",
+                                        "center center",
+                                        "center bottom",
+                                        "right top",
+                                        "right center",
+                                        "right bottom"
+                                    ],
+                                    "_backboneForms": "Select"
+                                }
+                            }
+                        },
+                        "_menuHeader": {
+                            "type": "object",
+                            "title": "Antet",
+                            "default": {},
+                            "properties": {
+                                "_textAlignment": {
+                                    "type": "object",
+                                    "title": "Alinierea textului",
+                                    "default": {},
+                                    "properties": {
+                                        "_title": {
+                                            "type": "string",
+                                            "title": "Aliniere titlu",
+                                            "description": "Setați alinierea titlului meniului. Left [Stânga]: Aliniază titlul la stânga containerului. Center [Centru]: Aliniază titlul la centrul containerului. Dreapta: Aliniază titlul la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii.",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "left",
+                                                "center",
+                                                "right"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        },
+                                        "_body": {
+                                            "type": "string",
+                                            "title": "Alinierea corpului",
+                                            "description": "Setați alinierea corpului meniului. Left [Stânga]: Aliniază corpul la stânga recipientului. Centru: Aliniază corpul la centrul recipientului. Dreapta: Aliniază corpul la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii.",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "left",
+                                                "center",
+                                                "right"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        },
+                                        "_instruction": {
+                                            "type": "string",
+                                            "title": "Alinierea instrucțiunilor",
+                                            "description": "Setați alinierea instrucțiunilor din meniu. Left [Stânga]: Aliniază instrucțiunile la stânga containerului. Center [Centru]: Aliniază instrucțiunile la centrul containerului. Dreapta: Aliniază instrucțiunile la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii.",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "left",
+                                                "center",
+                                                "right"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        }
+                                    }
+                                },
+                                "_backgroundImage": {
+                                    "type": "object",
+                                    "title": "Imaginea de fundal a antetului",
+                                    "default": {},
+                                    "properties": {
+                                        "_xlarge": {
+                                            "type": "string",
+                                            "title": "Εxtra Mare",
+                                            "description": "Imagine de fundal foarte mare, de exemplu, laptop/desktop hd",
+                                            "_backboneForms": {
+                                                "type": "Asset",
+                                                "media": "image"
+                                            }
+                                        },
+                                        "_large": {
+                                            "type": "string",
+                                            "title": "Mare ",
+                                            "description": "Imagine de fundal mare, de exemplu, laptop/desktop",
+                                            "_backboneForms": {
+                                                "type": "Asset",
+                                                "media": "image"
+                                            }
+                                        },
+                                        "_medium": {
+                                            "type": "string",
+                                            "title": "Medie",
+                                            "description": "Imagine de fundal medie, de exemplu, dispozitive tabletă",
+                                            "_backboneForms": {
+                                                "type": "Asset",
+                                                "media": "image"
+                                            }
+                                        },
+                                        "_small": {
+                                            "type": "string",
+                                            "title": "Mică ",
+                                            "description": "Imagine de fundal mică, de exemplu, telefoane mobile / mobile",
+                                            "_backboneForms": {
+                                                "type": "Asset",
+                                                "media": "image"
+                                            }
+                                        }
+                                    }
+                                },
+                                "_backgroundStyles": {
+                                    "type": "object",
+                                    "title": "Imaginea de fundal a antetului",
+                                    "default": {},
+                                    "properties": {
+                                        "_backgroundRepeat": {
+                                            "type": "string",
+                                            "title": "Repetă",
+                                            "description": "Repetare-x: Imaginea de fundal se repetă numai orizontal. Repetare: imaginea de fundal se repetă numai pe verticală",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "repeat",
+                                                "repeat-x",
+                                                "repeat-y",
+                                                "no-repeat"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        },
+                                        "_backgroundSize": {
+                                            "type": "string",
+                                            "title": "Dimensiuni",
+                                            "description": "Auto: Imaginea de fundal este afișată la dimensiunea sa originală. Copertă: Redimensionați imaginea de fundal pentru a acoperi întregul recipient, chiar dacă trebuie să întindă sau să decupeze imaginea. Conține: redimensionați imaginea de fundal pentru a vă asigura că imaginea este complet vizibilă",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "auto",
+                                                "cover",
+                                                "contain"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        },
+                                        "_backgroundPosition": {
+                                            "type": "string",
+                                            "title": "Funcţia",
+                                            "description": "Prima valoare este poziția orizontală, iar a doua valoare este poziția verticală",
+                                            "default": "",
+                                            "enum": [
+                                                "",
+                                                "left top",
+                                                "left center",
+                                                "left bottom",
+                                                "center top",
+                                                "center center",
+                                                "center bottom",
+                                                "right top",
+                                                "right center",
+                                                "right bottom"
+                                            ],
+                                            "_backboneForms": "Select"
+                                        }
+                                    }
+                                },
+                                "_minimumHeights": {
+                                    "type": "object",
+                                    "title": "Înălțimea minimă a antetului",
+                                    "default": {},
+                                    "properties": {
+                                        "_xlarge": {
+                                            "type": "number",
+                                            "title": "Εxtra Mare",
+                                            "description": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal",
+                                            "default": 0
+                                        },
+                                        "_large": {
+                                            "type": "number",
+                                            "title": "Mare ",
+                                            "description": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal",
+                                            "default": 0
+                                        },
+                                        "_medium": {
+                                            "type": "number",
+                                            "title": "Medie",
+                                            "description": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal",
+                                            "default": 0
+                                        },
+                                        "_small": {
+                                            "type": "number",
+                                            "title": "Mică ",
+                                            "description": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal",
+                                            "default": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                  }
-                },
-                "_backgroundStyles": {
-                  "type": "object",
-                  "title": "Header background image styles",
-                  "default": {},
-                  "properties": {
-                    "_backgroundRepeat": {
-                      "type": "string",
-                      "title": "Repeat",
-                      "description": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "repeat",
-                        "repeat-x",
-                        "repeat-y",
-                        "no-repeat"
-                      ],
-                      "_backboneForms": "Select"
-                    },
-                    "_backgroundSize": {
-                      "type": "string",
-                      "title": "Size",
-                      "description": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "auto",
-                        "cover",
-                        "contain"
-                      ],
-                      "_backboneForms": "Select"
-                    },
-                    "_backgroundPosition": {
-                      "type": "string",
-                      "title": "Position",
-                      "description": "The first value is the horizontal position and the second value is the vertical",
-                      "default": "",
-                      "enum": [
-                        "",
-                        "left top",
-                        "left center",
-                        "left bottom",
-                        "center top",
-                        "center center",
-                        "center bottom",
-                        "right top",
-                        "right center",
-                        "right bottom"
-                      ],
-                      "_backboneForms": "Select"
-                    }
-                  }
-                },
-                "_minimumHeights": {
-                  "type": "object",
-                  "title": "Header minimum height",
-                  "default": {},
-                  "properties": {
-                    "_xlarge": {
-                      "type": "number",
-                      "title": "Extra Large",
-                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
-                      "default": 0
-                    },
-                    "_large": {
-                      "type": "number",
-                      "title": "Large",
-                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
-                      "default": 0
-                    },
-                    "_medium": {
-                      "type": "number",
-                      "title": "Medium",
-                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
-                      "default": 0
-                    },
-                    "_small": {
-                      "type": "number",
-                      "title": "Small",
-                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
-                      "default": 0
-                    }
-                  }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }

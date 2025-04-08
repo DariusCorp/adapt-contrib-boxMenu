@@ -1,317 +1,407 @@
 {
-  "type": "object",
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "id": "http://jsonschema.net",
-  "$ref": "http://localhost/plugins/content/contentobject/model.schema",
-  "globals": {
-    "itemCount": {
-      "type": "string",
-      "required": true,
-      "title": "Item count label",
-      "default": "Item {{_nthChild}} of {{_totalChild}}",
-      "inputType": "Text",
-      "validators": [],
-      "translatable": true
-    },
-    "durationLabel": {
-      "type": "string",
-      "required": true,
-      "default": "Duration:",
-      "inputType": "Text",
-      "validators": [],
-      "translatable": true
-    }
-  },
-  "properties": {
-    "pluginLocations": {
-      "type": "object",
-      "required": true,
-      "properties": {
-        "config": {
-          "type": "object"
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "id": "http://jsonschema.net",
+    "$ref": "http://localhost/plugins/content/contentobject/model.schema",
+    "globals": {
+        "itemCount": {
+            "type": "string",
+            "required": true,
+            "title": "Etichetă număr de articole",
+            "default": "Item {{_nthChild}} of {{_totalChild}}",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
         },
-        "course": {
-          "type": "object",
-          "properties": {
-            "_boxMenu": {
-              "type": "object",
-              "required": false,
-              "properties": {
-                "_graphic": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Menu logo image",
-                  "properties": {
-                    "_src": {
-                      "type": "string",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "title": "Source",
-                      "help": "This image will appear above the menu page title",
-                      "required": false,
-                      "default": ""
-                    },
-                    "alt": {
-                      "type": "string",
-                      "inputType": "Text",
-                      "validators": [],
-                      "title": "Alternative text",
-                      "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
-                      "required": false,
-                      "translatable": true
-                    }
-                  }
-                },
-                "_backgroundImage": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Menu background image",
-                  "properties": {
-                    "_xlarge": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Extra large background image, e.g. hd laptop/desktop computers"
-                    },
-                    "_large": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Large background image, e.g. laptop/desktop computers"
-                    },
-                    "_medium": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Medium background image, e.g. tablet devices"
-                    },
-                    "_small": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Asset:image",
-                      "validators": [],
-                      "help": "Small background image, e.g. mobile / cellphones"
-                    }
-                  }
-                },
-                "_backgroundStyles": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Menu background image styles",
-                  "properties": {
-                    "_backgroundRepeat": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": {"type":"Select", "options":["repeat","repeat-x","repeat-y","no-repeat"]},
-                      "title": "Set if/how the background image repeats",
-                      "help": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically."
-                    },
-                    "_backgroundSize": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
-                      "title": "Set the size of the background image",
-                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
-                    },
-                    "_backgroundPosition": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": {"type":"Select", "options":["left top","left center","left bottom","center top","center center","center bottom","right top","right center","right bottom"]},
-                      "title": "Set the position of the background image",
-                      "help": "The first value is the horizontal position and the second value is the vertical."
-                    }
-                  }
-                },
-                "_menuHeader": {
-                  "type": "object",
-                  "required": false,
-                  "properties": {
-                    "_textAlignment": {
-                      "type": "object",
-                      "required": false,
-                      "legend": "Text alignment",
-                      "properties": {
-                        "_title": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["","left","center","right"]},
-                          "title": "Title alignment",
-                          "help": "Set the alignment of the menu title. Left: Aligns the title to the left of the container. Center: Aligns the title to the center of the container. Right: Aligns the title to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction."
-                        },
-                        "_body": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["","left","center","right"]},
-                          "title": "Body alignment",
-                          "help": "Set the alignment of the menu body. Left: Aligns the body to the left of the container. Center: Aligns the body to the center of the container. Right: Aligns the body to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction."
-                        },
-                        "_instruction": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["","left","center","right"]},
-                          "title": "Instruction alignment",
-                          "help": "Set the alignment of the menu instruction. Left: Aligns the instruction to the left of the container. Center: Aligns the instruction to the center of the container. Right: Aligns the instruction to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction."
-                        }
-                      }
-                    },
-                    "_backgroundImage": {
-                      "type": "object",
-                      "required": false,
-                      "legend": "Menu header background image",
-                      "properties": {
-                        "_xlarge": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Asset:image",
-                          "validators": [],
-                          "help": "Extra large background image, e.g. hd laptop/desktop computers"
-                        },
-                        "_large": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Asset:image",
-                          "validators": [],
-                          "help": "Large background image, e.g. laptop/desktop computers"
-                        },
-                        "_medium": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Asset:image",
-                          "validators": [],
-                          "help": "Medium background image, e.g. tablet devices"
-                        },
-                        "_small": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Asset:image",
-                          "validators": [],
-                          "help": "Small background image, e.g. mobile / cellphones"
-                        }
-                      }
-                    },
-                    "_backgroundStyles": {
-                      "type": "object",
-                      "required": false,
-                      "legend": "Menu header background image styles",
-                      "properties": {
-                        "_backgroundRepeat": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["repeat","repeat-x","repeat-y","no-repeat"]},
-                          "title": "Set if/how the background image repeats",
-                          "help": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically."
-                        },
-                        "_backgroundSize": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
-                          "title": "Set the size of the background image",
-                          "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
-                        },
-                        "_backgroundPosition": {
-                          "type": "string",
-                          "required": false,
-                          "default": "",
-                          "inputType": {"type":"Select", "options":["left top","left center","left bottom","center top","center center","center bottom","right top","right center","right bottom"]},
-                          "title": "Set the position of the background image",
-                          "help": "The first value is the horizontal position and the second value is the vertical."
-                        }
-                      }
-                    },
-                    "_minimumHeights": {
-                      "type": "object",
-                      "required": false,
-                      "legend": "Menu header minimum height",
-                      "properties": {
-                        "_xlarge": {
-                          "type": "number",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Number",
-                          "validators": ["number"],
-                          "help": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped"
-                        },
-                        "_large": {
-                          "type": "number",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Number",
-                          "validators": ["number"],
-                          "help": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped"
-                        },
-                        "_medium": {
-                          "type": "number",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Number",
-                          "validators": ["number"],
-                          "help": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped"
-                        },
-                        "_small": {
-                          "type": "number",
-                          "required": false,
-                          "default": "",
-                          "inputType": "Number",
-                          "validators": ["number"],
-                          "help": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "contentobject": {
-          "type": "object",
-          "properties": {
-            "_boxMenu": {
-              "type": "object",
-              "required": false,
-              "properties": {
-                "_renderAsGroup": {
-                  "type": "boolean",
-                  "required": false,
-                  "default": false,
-                  "title": "Enable as menu group?",
-                  "inputType": "Checkbox",
-                  "validators": [],
-                  "help": "Enable this option to render items into a group on the menu. Groups can display a title, body, and instruction text."
-                }
-              }
-            }
-          }
-        },
-        "article": {
-          "type": "object"
-        },
-        "block": {
-          "type": "object"
-        },
-        "component": {
-          "type": "object"
+        "durationLabel": {
+            "type": "string",
+            "required": true,
+            "default": "Duration:",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
         }
-      }
+    },
+    "properties": {
+        "pluginLocations": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "config": {
+                    "type": "object"
+                },
+                "course": {
+                    "type": "object",
+                    "properties": {
+                        "_boxMenu": {
+                            "type": "object",
+                            "required": false,
+                            "properties": {
+                                "_graphic": {
+                                    "type": "object",
+                                    "required": false,
+                                    "legend": "Imagine Logo",
+                                    "properties": {
+                                        "_src": {
+                                            "type": "string",
+                                            "inputType": "Asset:image",
+                                            "validators": [],
+                                            "title": "Sursă",
+                                            "help": "Această imagine va apărea deasupra titlului paginii de meniu",
+                                            "required": false,
+                                            "default": ""
+                                        },
+                                        "alt": {
+                                            "type": "string",
+                                            "inputType": "Text",
+                                            "validators": [],
+                                            "title": "Text alternativ",
+                                            "help": "O descriere a imaginii; necesară atunci când are un înțeles care trebuie transmis cursantului. Pentru imaginile „decorative”, lăsați acest spațiu necompletat",
+                                            "required": false,
+                                            "translatable": true
+                                        }
+                                    }
+                                },
+                                "_backgroundImage": {
+                                    "type": "object",
+                                    "required": false,
+                                    "legend": "Mega Menu Background Image",
+                                    "properties": {
+                                        "_xlarge": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": "Asset:image",
+                                            "validators": [],
+                                            "help": "Imagine de fundal foarte mare, de exemplu, laptop/desktop hd"
+                                        },
+                                        "_large": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": "Asset:image",
+                                            "validators": [],
+                                            "help": "Imagine de fundal mare, de exemplu, laptop/desktop"
+                                        },
+                                        "_medium": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": "Asset:image",
+                                            "validators": [],
+                                            "help": "Imagine de fundal medie, de exemplu, dispozitive tabletă"
+                                        },
+                                        "_small": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": "Asset:image",
+                                            "validators": [],
+                                            "help": "Imagine de fundal mică, de exemplu, telefoane mobile / mobile"
+                                        }
+                                    }
+                                },
+                                "_backgroundStyles": {
+                                    "type": "object",
+                                    "required": false,
+                                    "legend": "Stiluri de imagine de fundal meniu",
+                                    "properties": {
+                                        "_backgroundRepeat": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": {
+                                                "type": "Select",
+                                                "options": [
+                                                    "repeat",
+                                                    "repeat-x",
+                                                    "repeat-y",
+                                                    "no-repeat"
+                                                ]
+                                            },
+                                            "title": "Setați dacă/cum se repetă imaginea de fundal",
+                                            "help": "Repetare-x: Imaginea de fundal se repetă numai orizontal. Repetare: Imaginea de fundal se repetă numai pe verticală."
+                                        },
+                                        "_backgroundSize": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": {
+                                                "type": "Select",
+                                                "options": [
+                                                    "auto",
+                                                    "cover",
+                                                    "contain",
+                                                    "100% 100%"
+                                                ]
+                                            },
+                                            "title": "Setați dimensiunea imaginii de fundal",
+                                            "help": "Auto: Imaginea de fundal este afișată la dimensiunea sa originală. Copertă: Redimensionați imaginea de fundal pentru a acoperi întregul recipient, chiar dacă trebuie să întindă sau să decupeze imaginea. Conține: Redimensionați imaginea de fundal pentru a vă asigura că imaginea este complet vizibilă. 100% 100%: Redimensionați imaginea de fundal pentru a se potrivi cu dimensiunile containerului."
+                                        },
+                                        "_backgroundPosition": {
+                                            "type": "string",
+                                            "required": false,
+                                            "default": "",
+                                            "inputType": {
+                                                "type": "Select",
+                                                "options": [
+                                                    "left top",
+                                                    "left center",
+                                                    "left bottom",
+                                                    "center top",
+                                                    "center center",
+                                                    "center bottom",
+                                                    "right top",
+                                                    "right center",
+                                                    "right bottom"
+                                                ]
+                                            },
+                                            "title": "Setați poziția imaginii de fundal",
+                                            "help": "Prima valoare este poziția orizontală, iar a doua valoare este verticală."
+                                        }
+                                    }
+                                },
+                                "_menuHeader": {
+                                    "type": "object",
+                                    "required": false,
+                                    "properties": {
+                                        "_textAlignment": {
+                                            "type": "object",
+                                            "required": false,
+                                            "legend": "Alinierea textului",
+                                            "properties": {
+                                                "_title": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "",
+                                                            "left",
+                                                            "center",
+                                                            "right"
+                                                        ]
+                                                    },
+                                                    "title": "Aliniere titlu",
+                                                    "help": "Setați alinierea titlului meniului. Left [Stânga]: Aliniază titlul la stânga containerului. Center [Centru]: Aliniază titlul la centrul containerului. Dreapta: Aliniază titlul la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii."
+                                                },
+                                                "_body": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "",
+                                                            "left",
+                                                            "center",
+                                                            "right"
+                                                        ]
+                                                    },
+                                                    "title": "Alinierea corpului",
+                                                    "help": "Setați alinierea corpului meniului. Left [Stânga]: Aliniază corpul la stânga recipientului. Centru: Aliniază corpul la centrul recipientului. Dreapta: Aliniază corpul la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii."
+                                                },
+                                                "_instruction": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "",
+                                                            "left",
+                                                            "center",
+                                                            "right"
+                                                        ]
+                                                    },
+                                                    "title": "Alinierea instrucțiunilor",
+                                                    "help": "Setați alinierea instrucțiunilor din meniu. Left [Stânga]: Aliniază instrucțiunile la stânga containerului. Center [Centru]: Aliniază instrucțiunile la centrul containerului. Dreapta: Aliniază instrucțiunile la dreapta containerului. Alinierea se inversează automat pentru limbile de la dreapta la stânga. Valoarea implicită este „” , care moștenește direcția naturală a paginii."
+                                                }
+                                            }
+                                        },
+                                        "_backgroundImage": {
+                                            "type": "object",
+                                            "required": false,
+                                            "legend": "Imaginea de fundal a antetului",
+                                            "properties": {
+                                                "_xlarge": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Asset:image",
+                                                    "validators": [],
+                                                    "help": "Imagine de fundal foarte mare, de exemplu, laptop/desktop hd"
+                                                },
+                                                "_large": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Asset:image",
+                                                    "validators": [],
+                                                    "help": "Imagine de fundal mare, de exemplu, laptop/desktop"
+                                                },
+                                                "_medium": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Asset:image",
+                                                    "validators": [],
+                                                    "help": "Imagine de fundal medie, de exemplu, dispozitive tabletă"
+                                                },
+                                                "_small": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Asset:image",
+                                                    "validators": [],
+                                                    "help": "Imagine de fundal mică, de exemplu, telefoane mobile / mobile"
+                                                }
+                                            }
+                                        },
+                                        "_backgroundStyles": {
+                                            "type": "object",
+                                            "required": false,
+                                            "legend": "Stiluri imagine fundal antet meniu",
+                                            "properties": {
+                                                "_backgroundRepeat": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "repeat",
+                                                            "repeat-x",
+                                                            "repeat-y",
+                                                            "no-repeat"
+                                                        ]
+                                                    },
+                                                    "title": "Setați dacă/cum se repetă imaginea de fundal",
+                                                    "help": "Repetare-x: Imaginea de fundal se repetă numai orizontal. Repetare: Imaginea de fundal se repetă numai pe verticală."
+                                                },
+                                                "_backgroundSize": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "auto",
+                                                            "cover",
+                                                            "contain",
+                                                            "100% 100%"
+                                                        ]
+                                                    },
+                                                    "title": "Setați dimensiunea imaginii de fundal",
+                                                    "help": "Auto: Imaginea de fundal este afișată la dimensiunea sa originală. Copertă: Redimensionați imaginea de fundal pentru a acoperi întregul recipient, chiar dacă trebuie să întindă sau să decupeze imaginea. Conține: Redimensionați imaginea de fundal pentru a vă asigura că imaginea este complet vizibilă. 100% 100%: Redimensionați imaginea de fundal pentru a se potrivi cu dimensiunile containerului."
+                                                },
+                                                "_backgroundPosition": {
+                                                    "type": "string",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": {
+                                                        "type": "Select",
+                                                        "options": [
+                                                            "left top",
+                                                            "left center",
+                                                            "left bottom",
+                                                            "center top",
+                                                            "center center",
+                                                            "center bottom",
+                                                            "right top",
+                                                            "right center",
+                                                            "right bottom"
+                                                        ]
+                                                    },
+                                                    "title": "Setați poziția imaginii de fundal",
+                                                    "help": "Prima valoare este poziția orizontală, iar a doua valoare este verticală."
+                                                }
+                                            }
+                                        },
+                                        "_minimumHeights": {
+                                            "type": "object",
+                                            "required": false,
+                                            "legend": "Înălțime minimă antet meniu",
+                                            "properties": {
+                                                "_xlarge": {
+                                                    "type": "number",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Number",
+                                                    "validators": [
+                                                        "number"
+                                                    ],
+                                                    "help": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal"
+                                                },
+                                                "_large": {
+                                                    "type": "number",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Number",
+                                                    "validators": [
+                                                        "number"
+                                                    ],
+                                                    "help": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal"
+                                                },
+                                                "_medium": {
+                                                    "type": "number",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Number",
+                                                    "validators": [
+                                                        "number"
+                                                    ],
+                                                    "help": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal"
+                                                },
+                                                "_small": {
+                                                    "type": "number",
+                                                    "required": false,
+                                                    "default": "",
+                                                    "inputType": "Number",
+                                                    "validators": [
+                                                        "number"
+                                                    ],
+                                                    "help": "Înălțimea minimă trebuie utilizată numai în situațiile în care înălțimea antetului meniului trebuie să fie mai mare decât conținutul, de exemplu, pentru a preveni decuparea unei imagini de fundal"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "contentobject": {
+                    "type": "object",
+                    "properties": {
+                        "_boxMenu": {
+                            "type": "object",
+                            "required": false,
+                            "properties": {
+                                "_renderAsGroup": {
+                                    "type": "boolean",
+                                    "required": false,
+                                    "default": false,
+                                    "title": "Activați ca grup de meniu?",
+                                    "inputType": "Checkbox",
+                                    "validators": [],
+                                    "help": "Activați această opțiune pentru a reda elementele într-un grup din meniu. Grupurile pot afișa un titlu, un corp și un text de instrucțiuni."
+                                }
+                            }
+                        }
+                    }
+                },
+                "article": {
+                    "type": "object"
+                },
+                "block": {
+                    "type": "object"
+                },
+                "component": {
+                    "type": "object"
+                }
+            }
+        }
     }
-  }
 }
